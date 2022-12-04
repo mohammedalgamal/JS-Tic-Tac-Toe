@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: $main-color;
+    background-color: $third-color;
     color: $sec-color;
     min-height: 100vh;
     min-width: 100vw;
@@ -24,6 +24,25 @@ body {
         outline: inherit;
     }
 
+    .header {
+        background-color: $main-color;
+        width: 100vw;
+        height: 4.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 333px) {
+                height: 7rem;
+        }
+
+        .title {
+            color: $text_color;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+
 
     .footer {
         width: 100vw;
@@ -34,7 +53,7 @@ body {
 
 
         .text {
-            color: $text_color;
+            color: black;
             font-size: 20px;
 
             @media (max-width: 333px) {
