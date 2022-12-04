@@ -45,16 +45,59 @@ body {
 
     .main {
         margin-top: 30px;
+        margin-bottom: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         color: $main-color;
-        gap: 20px;
+        gap: 30px;
 
         .announcer {
             font-size: 50px;
             font-weight: 500;
+        }
+
+        .board {
+            width: max(33vw, 33vh);
+            height: max(33vw, 33vh);
+            display: grid;
+            grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+            .cell {
+                border-bottom: 2px solid black;
+                border-right: 2px solid black ;
+            }
+
+            .cell:hover {
+                background-color: rgb(163, 162, 162);
+            }
+
+            .place3, .place6, .place9 {
+                border-right: none;
+            }
+
+            .place7, .place8, .place9 {
+                border-bottom: none;
+            }
+        }
+
+        .restart {
+            margin-top: 10px;
+
+            .restart-btn {
+                width: 12vw;
+                height: 8vh;
+                font-size: max(2vw, 1.5vh);
+                text-align: center;
+                border-radius: 8px;
+                background-color: $main-color;
+                color: $text-color;
+            }
+
+            .restart-btn:hover {
+                filter: brightness(70%);
+            }
         }
     }
 
