@@ -1,1 +1,10 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1b494b;
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=main.css.map */
