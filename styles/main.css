@@ -7,4 +7,42 @@
 body {
   background-color: #1b494b;
   color: rgb(255, 255, 255);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+body button, body input[type=submit], body input[type=reset] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+body .footer {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+body .footer .text {
+  color: #fff;
+  font-size: 20px;
+}
+@media (max-width: 333px) {
+  body .footer .text {
+    font-size: 15px;
+  }
+}
+body .footer .text a img {
+  height: 25px;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  width: auto;
+}
+body .footer .text a img:hover {
+  transform: scale(1.2);
 }/*# sourceMappingURL=main.css.map */
