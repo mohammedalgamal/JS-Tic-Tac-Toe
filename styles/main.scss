@@ -65,8 +65,16 @@ body {
             grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
 
             .cell {
+                width: max(11vw, 11vh);
+                height: max(11vh, 11vw);
                 border-bottom: 2px solid black;
                 border-right: 2px solid black ;
+                padding-bottom: 20px;
+                font-size: max(7vw, 4.5vh);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
             }
 
             .cell:hover {

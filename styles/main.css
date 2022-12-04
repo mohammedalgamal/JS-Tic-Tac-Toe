@@ -60,8 +60,15 @@ body .main .board {
   grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
 }
 body .main .board .cell {
+  width: max(11vw, 11vh);
+  height: max(11vh, 11vw);
   border-bottom: 2px solid black;
   border-right: 2px solid black;
+  padding-bottom: 20px;
+  font-size: max(7vw, 4.5vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body .main .board .cell:hover {
   background-color: rgb(163, 162, 162);

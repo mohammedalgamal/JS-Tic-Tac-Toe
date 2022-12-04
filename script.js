@@ -1,6 +1,8 @@
 const global = (() => {
     const gameBoard = (() => {
-        const board = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x'];
+        
+        const board = ['x', 'x', 'o', 'x', 'o', 'x', 'o', 'x'];
+        
         const makeBoard = (() => {
             let container = document.querySelector('.board');
             for (let i = 1; i <= 9; i++) {
@@ -10,6 +12,14 @@ const global = (() => {
                 container.appendChild(temp_div);
             };
         })();
+
+        const displayBoard = ((board) => {
+            let cells = document.querySelectorAll('div[class^=place]');
+            for (let i = 0; i < board.length; i++) {
+                cells[i].innerHTML = board[i];
+            }
+        })(board);
+
         return {board};
     })();
 
