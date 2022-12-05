@@ -82,8 +82,8 @@ body .main .restart {
   margin-top: 10px;
 }
 body .main .restart .restart-btn {
-  width: 12vw;
-  height: 8vh;
+  width: max(12vw, 12vh);
+  height: max(7vh, 5vw);
   font-size: max(2vw, 1.5vh);
   text-align: center;
   border-radius: 8px;
