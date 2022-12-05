@@ -13,7 +13,7 @@ const global = (() => {
             };
         })();
 
-        const displayBoard = (board) => {
+        function displayBoard(board) {
             let cells = document.querySelectorAll('div[class^=place]');
             for(let i = 0; i < board.length; i++) {
                 cells[i].innerHTML = board[i];
@@ -37,6 +37,7 @@ const global = (() => {
                             x_player.myTurn = false;
                             o_player.myTurn = true;
                             announce.innerHTML = "Player O's turn";
+                            isWon(gameBoard.board);
                         }
                         else {
                             gameBoard.board[i] = o_player.playerSymbol;
@@ -44,11 +45,24 @@ const global = (() => {
                             x_player.myTurn = true;
                             o_player.myTurn = false;
                             announce.innerHTML = "Player X's turn";
+                            isWon(gameBoard.board);
                         };
                     };
                 });
             };
         })();
+
+        function isAllEqual(board) {
+            return new Set(board).size == 1;
+        }
+
+        function isWon(board) {
+            new_board = [...board];
+            first_row = new_board.slice(0, 3);
+            second_row = new_board.slice(3, 6);
+            third_row = new_board.slice(6, 9);
+            
+        };
     })();
 
     const player = (playerSymbol, myTurn) => {
