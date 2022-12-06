@@ -1,7 +1,15 @@
 const global = (() => {
+    
+    const player = (playerSymbol, myTurn) => {
+        return {playerSymbol, myTurn};
+    };
+    
+    const x_player = player('X', true);
+    const o_player = player('O', false);
+
     const gameBoard = (() => {
         
-        const board = ['', '', '', '', '', '', '', '', ''];
+        var board = ['', '', '', '', '', '', '', '', ''];
         
         const makeBoard = (() => {
             let container = document.querySelector('.board');
@@ -22,7 +30,9 @@ const global = (() => {
         displayBoard(board);
 
         function emptyBoard() {
-            board = ['', '', '', '', '', '', '', '', ''];
+            for (let i = 0; i < board.length; i++){
+                board[i] = '';
+            };
         };
 
         return {board, displayBoard, emptyBoard};
@@ -31,7 +41,15 @@ const global = (() => {
     const game = (() => {
         let cells = document.querySelectorAll('div[class^=place]');
         let announce = document.querySelector('.announcer');
-        
+        let restart_btn = document.querySelector('.restart-btn');
+        restart_btn.addEventListener('click', () => {
+            gameBoard.emptyBoard();
+            gameBoard.displayBoard(gameBoard.board);
+            x_player.myTurn = true;
+            o_player.myTurn = false;
+            announce.innerHTML = "Player X's turn";
+        });
+
         const fillBoard = (() => {
             for(let i = 0; i < gameBoard.board.length; i++) {
                 cells[i].addEventListener('click', () => {
@@ -129,13 +147,6 @@ const global = (() => {
             };
         };
     })();
-
-    const player = (playerSymbol, myTurn) => {
-        return {playerSymbol, myTurn};
-    };
-
-    const x_player = player('X', true);
-    const o_player = player('O', false);
     
     return {gameBoard, game, x_player, o_player};
 })();
